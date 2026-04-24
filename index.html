@@ -54,7 +54,6 @@
             max-width: 1200px; margin: 0 auto; background: #fff; min-height: 100vh;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
-
         /* HERO */
         .hero {
             background-color: var(--navy);
@@ -62,7 +61,7 @@
             color: #fff; text-align: center; padding: 48px 32px; position: relative;
         }
         .hero-logo {
-            height: 161px; width: auto; margin: 0 auto 24px; display: block;
+            height: 160px; width: auto; margin: 0 auto 24px; display: block;
             filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
         }
         .hero-kicker {
@@ -73,14 +72,13 @@
             font-size: 2.8rem; font-weight: 900; line-height: 1.1; color: #fff; margin-bottom: 4px;
         }
         .hero-subtitle {
-            font-size: 1rem; color: var(--red); font-weight: 700; margin-bottom: 20px;
+            font-size: 1rem; color: var(--yellow); font-weight: 700; margin-bottom: 20px;
             max-width: 700px; margin-left: auto; margin-right: auto;
         }
         .hero-pill {
             display: inline-block; background: var(--yellow); border-radius: 6px; padding: 8px 20px;
         }
-        .hero-pill p { margin: 0; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
-
+        .hero-pill p { margin: 0; font-size: 0.9rem; font-weight: 800; color: var(--red-dark); letter-spacing: 0.5px; }
         /* EMERGENCY BANNER */
         .emergency-banner {
             background: var(--red); padding: 16px 32px; text-align: center;
@@ -88,23 +86,32 @@
         }
         .emergency-banner p { margin: 0; font-size: 1rem; font-weight: 700; color: #fff; }
         .emergency-banner a { color: var(--yellow); text-decoration: underline; font-weight: 800; }
-
         /* NAV */
         .nav {
-            background: var(--navy); padding: 0 16px; position: sticky; top: 0; z-index: 90;
-            overflow-x: auto; white-space: nowrap; scrollbar-width: thin;
-            border-bottom: 2px solid var(--navy-dark);
+            background: var(--navy); padding: 12px 16px; position: sticky; top: 0; z-index: 90;
+            overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+            border-bottom: 1px solid var(--navy-dark);
         }
-        .nav-inner { display: flex; gap: 2px; padding: 0; }
+        .nav::-webkit-scrollbar { display: none; }
+        .nav-inner { display: flex; gap: 8px; padding: 0; align-items: center; }
         .nav a {
-            color: #fff; text-decoration: none; padding: 14px 16px;
+            color: #fff; text-decoration: none; padding: 8px 18px;
             font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px;
-            border-bottom: 3px solid transparent; transition: all 0.15s ease;
-            display: inline-block;
+            border-radius: 30px; background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease; display: inline-block;
         }
-        .nav a:hover { background: var(--navy-light); border-bottom-color: var(--yellow); }
-        .nav a.active { border-bottom-color: var(--yellow); color: var(--yellow); }
-
+        .nav a:hover {
+            background: var(--navy-light);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .nav a.active {
+            background: var(--yellow);
+            color: var(--navy);
+            border-color: var(--yellow);
+        }
         /* SECTIONS */
         section { padding: 48px 32px; border-top: 1px solid var(--gray-200); scroll-margin-top: 60px; }
         .section-kicker {
@@ -117,7 +124,6 @@
         .section-lead {
             font-size: 1.05rem; line-height: 1.7; color: var(--gray-700); max-width: 800px; margin-bottom: 28px;
         }
-
         /* INTRO STATS */
         .intro { background: var(--gray-50); }
         .intro-stats {
@@ -129,7 +135,6 @@
         }
         .intro-stat-num { font-size: 1.9rem; font-weight: 900; color: var(--navy); line-height: 1; }
         .intro-stat-label { font-size: 0.8rem; color: var(--gray-700); margin-top: 6px; line-height: 1.4; }
-
         /* DECISION TREES */
         .decision-tree {
             background: var(--danger-bg); border-left: 6px solid var(--red);
@@ -181,7 +186,6 @@
         .do-not-box li::before {
             content: "\2715"; color: var(--red); position: absolute; left: 0; font-weight: 800;
         }
-
         /* CONTROLS (search + filter) */
         .controls { padding: 20px 32px 0; display: grid; gap: 12px; }
         .search-input {
@@ -199,7 +203,6 @@
         }
         .chip:hover { border-color: var(--navy); }
         .chip.active { background: var(--navy); border-color: var(--navy); color: var(--yellow); }
-
         /* SPECIES GRID */
         .species-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,7 +257,6 @@
             content: "\25C6"; color: var(--yellow);
             position: absolute; left: 0; top: 3px; font-size: 0.7rem;
         }
-
         /* COMPARISON */
         .comparison-section {
             background: var(--navy);
@@ -294,7 +296,6 @@
         }
         .comparison-features { font-size: 0.85rem; line-height: 1.5; color: var(--gray-700); }
         .comparison-features strong { color: var(--navy); }
-
         /* MNEMONIC */
         .mnemonic {
             background: var(--yellow); border-radius: 14px; padding: 26px;
@@ -306,7 +307,6 @@
         }
         .mnemonic-quote { font-size: 1.7rem; font-weight: 900; line-height: 1.3; margin-bottom: 10px; }
         .mnemonic-meaning { font-size: 0.92rem; font-weight: 600; opacity: 0.85; }
-
         /* MAP */
         .map-wrapper {
             width: 100%; height: 500px; border-radius: 14px;
@@ -325,7 +325,6 @@
             width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
             border: 3px solid #fff; box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
         }
-
         /* HABITAT CARDS */
         .habitat-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -346,7 +345,6 @@
             font-size: 0.82rem; padding-top: 10px; border-top: 1px solid var(--gray-200);
         }
         .habitat-risks strong { color: var(--navy); display: block; margin-bottom: 4px; }
-
         /* PREVENTION TABS */
         .prevention-section { background: var(--gray-50); }
         .prevention-tabs {
@@ -383,7 +381,6 @@
             border-radius: 4px; font-size: 0.72rem; font-weight: 800;
             display: flex; align-items: center; justify-content: center;
         }
-
         /* QUICK REF */
         .quick-ref { background: var(--navy); color: #fff; padding: 48px 32px; }
         .quick-ref .section-title { color: #fff; }
@@ -403,7 +400,6 @@
         .ref-card p { font-size: 0.92rem; line-height: 1.55; color: #e5e7eb; margin-bottom: 8px; }
         .ref-card a { color: var(--yellow); text-decoration: underline; font-weight: 700; }
         .ref-card .big { color: #fff; font-size: 1.4rem; font-weight: 900; }
-
         /* FOOTER */
         .footer { background: #0d1e2d; padding: 40px 32px; text-align: center; color: #fff; }
         .footer-tagline {
@@ -421,23 +417,46 @@
             font-size: 0.74rem; color: #6b7280; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.5;
         }
         .footer-attribution a { color: #9ca3af; text-decoration: underline; }
-
-        /* FLOATING 911 */
-        .emergency-fab {
+        /* FLOATING QR SHARE BUTTON
+           (Call 911 FAB intentionally omitted to prevent accidental taps.
+           911 is surfaced in the emergency banner, decision trees, and Quick Reference.) */
+        .qr-fab {
             position: fixed; bottom: 24px; right: 24px;
-            background: var(--red); color: #fff;
-            padding: 14px 22px; border-radius: 999px;
-            font-weight: 800; text-decoration: none; font-size: 0.95rem;
-            box-shadow: 0 8px 20px rgba(191, 39, 38, 0.4);
-            z-index: 100; transition: transform 0.15s ease;
-            border: 3px solid #fff;
+            background: var(--navy); color: #fff;
+            width: 56px; height: 56px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(21, 42, 64, 0.3);
+            z-index: 100; transition: transform 0.15s ease, background 0.15s ease;
+            border: 3px solid #fff; cursor: pointer;
         }
-        .emergency-fab:hover { transform: translateY(-2px); color: #fff; }
-
+        .qr-fab:hover { transform: translateY(-2px); background: var(--navy-light); }
+        .qr-fab svg { width: 26px; height: 26px; fill: currentColor; }
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(14, 29, 45, 0.8); z-index: 400;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            background: #fff; border-radius: 16px; padding: 32px 24px;
+            max-width: 320px; width: 100%; text-align: center;
+            position: relative; transform: translateY(20px); transition: transform 0.2s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .close-btn {
+            position: absolute; top: 12px; right: 12px;
+            background: none; border: none; font-size: 1.8rem;
+            color: var(--gray-500); cursor: pointer; line-height: 1;
+            width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+        .close-btn:hover { background: var(--gray-100); color: var(--navy); }
         /* RESPONSIVE */
         @media screen and (max-width: 768px) {
             .hero-title { font-size: 1.9rem; }
             .hero { padding: 40px 20px 32px; }
+            .hero-logo { height: 120px; }
             section { padding: 36px 20px; }
             .section-title { font-size: 1.5rem; }
             .intro-stats { grid-template-columns: repeat(2, 1fr); }
@@ -447,15 +466,15 @@
             }
             .comparison-side.danger { border-right: none; border-bottom: 1px solid var(--gray-200); }
             .checklist-grid { grid-template-columns: 1fr; }
-            .emergency-fab { bottom: 16px; right: 16px; padding: 12px 18px; font-size: 0.85rem; }
+            .qr-fab { bottom: 16px; right: 16px; width: 48px; height: 48px; }
+            .qr-fab svg { width: 22px; height: 22px; }
             .map-wrapper { height: 400px; }
             .controls { padding: 20px 20px 0; }
         }
-
         @media print {
             body { background: #fff; }
             .container { box-shadow: none; }
-            .nav, .emergency-fab, .comparison-divider { display: none; }
+            .nav, .qr-fab, .comparison-divider { display: none; }
             section { page-break-inside: avoid; padding: 20px; }
             .species-card, .habitat-card, .ref-card { page-break-inside: avoid; }
             .emergency-banner { background: #fff; color: #000; border: 2px solid #000; }
@@ -464,25 +483,19 @@
     </style>
 </head>
 <body>
-
 <a href="#main" class="skip-link">Skip to main content</a>
-
 <main class="container" id="main">
-
     <!-- HERO -->
     <header class="hero">
         <img src="https://files.constantcontact.com/3720c3fd901/10017eb4-f7d2-424d-92ed-c1b5424b9869.png" alt="Denton Fire Department" class="hero-logo" />
-        <p class="hero-kicker">Denton Fire Department &bull; Community Risk Reduction</p>
         <h1 class="hero-title">Denton County Field Guide</h1>
         <p class="hero-subtitle">Know what's out there. Know what to do. Built for Denton backyards, trails, and lakes.</p>
         <div class="hero-pill"><p>Snakes &bull; Plants &bull; Insects &bull; Maps &bull; First Aid</p></div>
     </header>
-
     <!-- EMERGENCY BANNER -->
     <div class="emergency-banner" role="note">
         <p>Snake bite or severe allergic reaction? Call <a href="tel:911">911</a>. Texas Poison Control: <a href="tel:18002221222">1-800-222-1222</a></p>
     </div>
-
     <!-- NAV -->
     <nav class="nav" aria-label="Primary">
         <div class="nav-inner">
@@ -496,7 +509,6 @@
             <a href="#quick-ref">Quick Reference</a>
         </div>
     </nav>
-
     <!-- INTRO -->
     <section class="intro" aria-labelledby="intro-title">
         <p class="section-kicker">Why This Guide Exists</p>
@@ -523,13 +535,11 @@
             </div>
         </div>
     </section>
-
     <!-- EMERGENCY DECISION TREES -->
     <section id="emergency" aria-labelledby="emergency-title">
         <p class="section-kicker">If It Already Happened</p>
         <h2 class="section-title" id="emergency-title">Bite, sting, or exposure response.</h2>
         <p class="section-lead">If you are reading this because something just happened, start here. Move through the steps in order. Get to a hospital if a venomous bite is possible.</p>
-
         <div class="decision-tree">
             <h3>Snake Bite</h3>
             <p class="lead">Any bite where the species is unknown should be treated as venomous until proven otherwise at a hospital.</p>
@@ -574,7 +584,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="decision-tree warning">
             <h3>Insect Sting with Allergic Reaction</h3>
             <p class="lead">A normal sting causes local pain and swelling. Anaphylaxis is different and can kill within minutes.</p>
@@ -607,7 +616,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="decision-tree safe">
             <h3>Plant Exposure (Poison Ivy, Oak, Sumac)</h3>
             <p class="lead">The oil (urushiol) causes the reaction. Speed matters because the oil bonds to skin within 10 to 20 minutes.</p>
@@ -640,13 +648,11 @@
             </div>
         </div>
     </section>
-
     <!-- VENOMOUS SNAKES -->
     <section id="snakes" aria-labelledby="snakes-title">
         <p class="section-kicker">The Species You Need to Know</p>
         <h2 class="section-title" id="snakes-title">Venomous snakes of North Texas.</h2>
         <p class="section-lead">Texas has four groups of venomous snakes. All four occur across North Texas. Three are pit vipers (copperheads, cottonmouths, rattlesnakes). One is an elapid (coral snake). The pit vipers share identifying traits. The coral snake is in a category of its own.</p>
-
         <div class="checklist-grid" style="margin-bottom: 28px;">
             <div class="checklist-card">
                 <h3>Pit viper markers, from a safe distance</h3>
@@ -669,10 +675,8 @@
                 </ul>
             </div>
         </div>
-
         <div class="species-grid" id="snakeGrid"></div>
     </section>
-
     <!-- GLOBAL SEARCH (filters all species sections) -->
     <section id="species-search" aria-labelledby="search-title" style="padding: 24px 32px 0; border-top: 1px solid var(--gray-200); background: var(--gray-50);">
         <p class="section-kicker" id="search-title">Search All Species</p>
@@ -687,13 +691,11 @@
             </div>
         </div>
     </section>
-
     <!-- LOOK-ALIKES -->
     <section id="lookalikes" class="comparison-section" aria-labelledby="lookalike-title">
         <p class="section-kicker">Don't Kill a Snake You Don't Need To</p>
         <h2 class="section-title" id="lookalike-title">Venomous vs. harmless look-alikes.</h2>
         <p class="section-lead">Most snakes in Denton are not venomous. Killing a harmless snake removes a natural rodent predator from your yard. Learn the key differences so you can tell them apart without getting close.</p>
-
         <div class="comparison-pair">
             <div class="comparison-side danger">
                 <img class="comparison-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Agkistrodon_contortrix_mokasen_CDC.png?width=640" alt="Eastern Copperhead" onerror="this.outerHTML='<div class=&quot;comparison-image&quot; style=&quot;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#152a40,#1e3a5c);color:#f9c031;font-weight:800;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:16px;text-align:center;height:180px;&quot;>Photo unavailable</div>'" loading="lazy">
@@ -709,7 +711,6 @@
                 <div class="comparison-features"><strong>Irregular blotches</strong>, not hourglasses. <strong>Gray, black, or yellow</strong> tones. <strong>Rounded</strong> head. <strong>Round</strong> pupils. Slender. Often found climbing.</div>
             </div>
         </div>
-
         <div class="comparison-pair">
             <div class="comparison-side danger">
                 <img class="comparison-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Agkistrodon_piscivorus_head.jpg?width=640" alt="Northern Cottonmouth" onerror="this.outerHTML='<div class=&quot;comparison-image&quot; style=&quot;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#152a40,#1e3a5c);color:#f9c031;font-weight:800;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:16px;text-align:center;height:180px;&quot;>Photo unavailable</div>'" loading="lazy">
@@ -725,7 +726,6 @@
                 <div class="comparison-features"><strong>Slender</strong> body. Head <strong>not distinct</strong> from neck. <strong>Diamond-pattern netting</strong> on back. Swims <strong>body mostly submerged</strong>. No eye-stripe. Will bite defensively but has no fangs or venom.</div>
             </div>
         </div>
-
         <div class="comparison-pair">
             <div class="comparison-side danger">
                 <img class="comparison-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Micrurus_tener.jpg?width=640" alt="Texas Coral Snake" onerror="this.outerHTML='<div class=&quot;comparison-image&quot; style=&quot;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#152a40,#1e3a5c);color:#f9c031;font-weight:800;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:16px;text-align:center;height:180px;&quot;>Photo unavailable</div>'" loading="lazy">
@@ -741,14 +741,12 @@
                 <div class="comparison-features"><strong>Red touches black.</strong> Bands often do not fully wrap around the belly. <strong>Red nose</strong> (not black). Round pupils. Similar size.</div>
             </div>
         </div>
-
         <div class="mnemonic">
             <div class="mnemonic-label">The Coral Snake Rhyme</div>
             <div class="mnemonic-quote">"Red touches yellow, kill a fellow.<br>Red touches black, friend of Jack."</div>
             <div class="mnemonic-meaning">Works for North American coral snakes. Does NOT apply to tropical species outside the US.</div>
         </div>
     </section>
-
     <!-- PLANTS -->
     <section id="plants" aria-labelledby="plants-title">
         <p class="section-kicker">Leaves of Three and More</p>
@@ -756,7 +754,6 @@
         <p class="section-lead">Poison ivy is the most common cause of outdoor skin reactions in North Texas. A few other plants cause worse reactions but are less commonly encountered. Learn what to avoid.</p>
         <div class="species-grid" id="plantGrid"></div>
     </section>
-
     <!-- INSECTS -->
     <section id="insects" class="intro" aria-labelledby="insects-title">
         <p class="section-kicker">Eight Legs, Six Legs, Many Problems</p>
@@ -764,7 +761,6 @@
         <p class="section-lead">Dangerous spiders are uncommon but present in Denton. Stinging insects are everywhere. Ticks carry disease. Fire ants are aggressive. Knowing which is which and how to respond matters.</p>
         <div class="species-grid" id="insectGrid"></div>
     </section>
-
     <!-- MAP -->
     <section id="map" aria-labelledby="map-title">
         <p class="section-kicker">Know Before You Go</p>
@@ -776,7 +772,6 @@
             <div class="legend-item"><div class="legend-dot" style="background: var(--yellow);"></div><span><strong>Moderate Risk:</strong> Poison ivy, ticks, copperheads</span></div>
             <div class="legend-item"><div class="legend-dot" style="background: var(--green);"></div><span><strong>Low Risk:</strong> Maintained trails, urban parks</span></div>
         </div>
-
         <h3 style="font-size: 1.3rem; font-weight: 900; color: var(--navy); margin: 36px 0 12px;">Area-specific guidance</h3>
         <div class="habitat-grid">
             <div class="habitat-card">
@@ -837,13 +832,11 @@
             </div>
         </div>
     </section>
-
     <!-- PREVENTION -->
     <section id="prevention" class="prevention-section" aria-labelledby="prev-title">
         <p class="section-kicker">Most Bites Are Preventable</p>
         <h2 class="section-title" id="prev-title">Prevention that works.</h2>
         <p class="section-lead">Almost all snakebites in Texas are defensive. The snake was surprised, cornered, or stepped on. Prevention is about not surprising or cornering a snake in the first place. Same principle applies to most wildlife hazards.</p>
-
         <div class="prevention-tabs" role="tablist">
             <button class="tab-btn active" data-tab="yard" id="tab-btn-yard" role="tab" aria-selected="true" aria-controls="tab-yard">Your Yard</button>
             <button class="tab-btn" data-tab="trail" id="tab-btn-trail" role="tab" aria-selected="false" aria-controls="tab-trail">On the Trail</button>
@@ -851,7 +844,6 @@
             <button class="tab-btn" data-tab="home" id="tab-btn-home" role="tab" aria-selected="false" aria-controls="tab-home">Inside the Home</button>
             <button class="tab-btn" data-tab="kids" id="tab-btn-kids" role="tab" aria-selected="false" aria-controls="tab-kids">Kids &amp; Pets</button>
         </div>
-
         <div class="tab-content active" id="tab-yard" role="tabpanel" aria-labelledby="tab-btn-yard">
             <div class="checklist-grid">
                 <div class="checklist-card">
@@ -896,7 +888,6 @@
                 </div>
             </div>
         </div>
-
         <div class="tab-content" id="tab-trail" role="tabpanel" aria-labelledby="tab-btn-trail">
             <div class="checklist-grid">
                 <div class="checklist-card">
@@ -941,7 +932,6 @@
                 </div>
             </div>
         </div>
-
         <div class="tab-content" id="tab-water" role="tabpanel" aria-labelledby="tab-btn-water">
             <div class="checklist-grid">
                 <div class="checklist-card">
@@ -986,7 +976,6 @@
                 </div>
             </div>
         </div>
-
         <div class="tab-content" id="tab-home" role="tabpanel" aria-labelledby="tab-btn-home">
             <div class="checklist-grid">
                 <div class="checklist-card">
@@ -1031,7 +1020,6 @@
                 </div>
             </div>
         </div>
-
         <div class="tab-content" id="tab-kids" role="tabpanel" aria-labelledby="tab-btn-kids">
             <div class="checklist-grid">
                 <div class="checklist-card">
@@ -1077,7 +1065,6 @@
             </div>
         </div>
     </section>
-
     <!-- QUICK REFERENCE -->
     <section id="quick-ref" class="quick-ref" aria-labelledby="ref-title">
         <p class="section-kicker">Save This Section</p>
@@ -1114,7 +1101,6 @@
             <p style="color: #fff; font-size: 0.92rem; line-height: 1.7; margin-bottom: 0;"><strong>Tick bite:</strong> Remove with tweezers straight up. Wash. Watch 30 days for rash or fever.</p>
         </div>
     </section>
-
     <!-- FOOTER -->
     <div class="footer">
         <p class="footer-tagline">Excellence Through Preparedness.</p>
@@ -1130,17 +1116,26 @@
             <p style="margin-top: 10px; font-weight: 700;">Version 2 &bull; April 2026 &bull; Denton Fire Department Community Risk Reduction &bull; <a href="mailto:CRR@cityofdenton.com">CRR@cityofdenton.com</a></p>
         </div>
     </div>
-
 </main>
-
-<a href="tel:911" class="emergency-fab" aria-label="Call 911">Call 911</a>
-
+<!-- FLOATING QR SHARE BUTTON (Call 911 FAB removed to prevent accidental taps) -->
+<button class="qr-fab" id="qrBtn" aria-label="Show QR code to share this guide">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 3h8v8H3zm2 2v4h4V5zm8-2h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zm8-2h2v2h-2zm2 0h2v2h-2zm2 0h2v2h-2zm2 0h2v2h-2zm-6 2h2v2h-2zm4 0h2v2h-2zm-2 2h2v2h-2zm4 0h2v2h-2zm-6 2h2v2h-2zm4 0h2v2h-2zm2 0h2v2h-2z" />
+    </svg>
+</button>
+<div class="modal-overlay" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+    <div class="modal-content">
+        <button class="close-btn" id="closeQrBtn" aria-label="Close modal">&times;</button>
+        <h3 id="qrModalTitle" style="color: var(--navy); margin-bottom: 16px; font-weight: 900; font-size: 1.25rem;">Share the Field Guide</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fdentonfire.github.io%2FField_Guide%2F&margin=10" alt="QR code that links to dentonfire.github.io/Field_Guide/" style="width: 200px; height: 200px; display: block; margin: 0 auto; border-radius: 8px;">
+        <p style="margin-top: 16px; font-size: 0.95rem; color: var(--gray-700);">Scan with any phone camera to open this guide.</p>
+    </div>
+</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 (function() {
     // ========= SPECIES DATA =========
     var SPECIES = [
-        // SNAKES
         {
             id: 'copperhead', category: 'snake', severity: 'danger', aliases: ['copperhead', 'copper head', 'highland moccasin'],
             name: 'Eastern Copperhead', latin: 'Agkistrodon contortrix',
@@ -1199,7 +1194,6 @@
                 'Found under logs, leaves, and debris'
             ]
         },
-        // PLANTS
         {
             id: 'poison-ivy', category: 'plant', severity: 'danger', aliases: ['poison ivy', 'ivy', 'leaves of three'],
             name: 'Poison Ivy', latin: 'Toxicodendron radicans',
@@ -1289,7 +1283,6 @@
                 'Keep children and pets away'
             ]
         },
-        // INSECTS AND ARACHNIDS
         {
             id: 'black-widow', category: 'insect', severity: 'danger', aliases: ['black widow', 'widow', 'widow spider', 'hourglass spider'],
             name: 'Southern Black Widow', latin: 'Latrodectus mactans',
@@ -1381,21 +1374,18 @@
             ]
         }
     ];
-
-    // ========= RENDER =========
     function sevBadge(s) {
         var map = { danger: ['Danger', 'badge-danger'], caution: ['Caution', 'badge-warning'] };
         var b = map[s] || ['Notice', 'badge-warning'];
         return '<span class="species-badge ' + b[1] + '">' + b[0] + '</span>';
     }
-
-    function sevClass(s) {
-        return s === 'danger' ? 'danger' : (s === 'caution' ? 'warning' : '');
-    }
-
+    function sevClass(s) { return s === 'danger' ? 'danger' : (s === 'caution' ? 'warning' : ''); }
+    // Robust image fallback: if the Wikimedia URL ever fails, swap in a navy/yellow "Photo unavailable" block
+    // matching the species-image dimensions so card layout never collapses.
+    var IMG_FALLBACK = 'onerror="this.outerHTML=\'<div class=&quot;species-image&quot; style=&quot;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#152a40,#1e3a5c);color:#f9c031;font-weight:800;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;padding:20px;text-align:center;&quot;>Photo unavailable</div>\'"';
     function renderCard(s) {
         return '<article class="species-card ' + sevClass(s.severity) + '" data-id="' + s.id + '" data-category="' + s.category + '" data-search="' + (s.name + ' ' + s.latin + ' ' + s.category + ' ' + (s.aliases || []).join(' ')).toLowerCase() + '">' +
-            '<img class="species-image" src="' + s.img + '" alt="' + s.imgAlt + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+            '<img class="species-image" src="' + s.img + '" alt="' + s.imgAlt + '" loading="lazy" ' + IMG_FALLBACK + '>' +
             '<div class="species-body">' +
                 sevBadge(s.severity) +
                 '<h3 class="species-name">' + s.name + '</h3>' +
@@ -1408,34 +1398,22 @@
             '</div>' +
         '</article>';
     }
-
     var snakeGrid = document.getElementById('snakeGrid');
     var plantGrid = document.getElementById('plantGrid');
     var insectGrid = document.getElementById('insectGrid');
-
     snakeGrid.innerHTML = SPECIES.filter(function(s) { return s.category === 'snake'; }).map(renderCard).join('');
     plantGrid.innerHTML = SPECIES.filter(function(s) { return s.category === 'plant'; }).map(renderCard).join('');
     insectGrid.innerHTML = SPECIES.filter(function(s) { return s.category === 'insect'; }).map(renderCard).join('');
-
-    // ========= SEARCH + FILTER =========
     var searchInput = document.getElementById('search');
     var activeFilter = 'all';
-
     function normalizeQuery(q) {
-        // Normalize common misspellings of snake names people actually type in a panic
         q = q.toLowerCase().trim();
-        // "mockasin", "mokasin", "mocassin", "moccassin", "mokassin", "mocasin" -> "moccasin"
         q = q.replace(/mo[ck]+[ae]?[ck]?as+in/g, 'moccasin');
         q = q.replace(/mocc?asin/g, 'moccasin');
-        // "rattler"/"rattle snake" -> also match "rattlesnake"
         q = q.replace(/rattle\s+snake/g, 'rattlesnake');
-        // "copper head" -> "copperhead"
         q = q.replace(/copper\s+head/g, 'copperhead');
-        // "cotton mouth" -> "cottonmouth"
         q = q.replace(/cotton\s+mouth/g, 'cottonmouth');
-        // "water snake" and "watersnake" both legitimate; normalize to spaced version for matching
         q = q.replace(/watersnake/g, 'water snake');
-        // "yellowjacket" -> "yellow jacket"
         q = q.replace(/yellowjacket/g, 'yellow jacket');
         return q;
     }
@@ -1449,7 +1427,6 @@
             card.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
         });
     }
-
     document.querySelectorAll('.chip[data-filter]').forEach(function(c) {
         c.addEventListener('click', function() {
             document.querySelectorAll('.chip[data-filter]').forEach(function(x) {
@@ -1467,8 +1444,6 @@
         });
     });
     searchInput.addEventListener('input', applyFilters);
-
-    // ========= NAV ACTIVE STATE =========
     var navLinks = document.querySelectorAll('.nav a');
     var sections = document.querySelectorAll('section');
     function updateNav() {
@@ -1484,8 +1459,6 @@
     }
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
-
-    // ========= PREVENTION TABS =========
     document.querySelectorAll('.tab-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             var target = btn.dataset.tab;
@@ -1499,16 +1472,13 @@
             document.getElementById('tab-' + target).classList.add('active');
         });
     });
-
-    // ========= LEAFLET MAP =========
-    var map = L.map('dentonMap', { scrollWheelZoom: false }).setView([33.22, -97.12], 10);
-    // Tap hint: 'Use two fingers to pan on mobile, or hold Ctrl and scroll on desktop'
+    var map = L.map('dentonMap', { scrollWheelZoom: false }).setView([33.25, -97.05], 10);
+    // View centers on Denton County between Ray Roberts (north) and LLELA (south)
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
     }).addTo(map);
-
     function mkIcon(color) {
         return L.divIcon({
             className: 'dfd-marker',
@@ -1519,26 +1489,43 @@
     var redIcon = mkIcon('#bf2726');
     var yellowIcon = mkIcon('#f9c031');
     var greenIcon = mkIcon('#16a34a');
-
     var locations = [
-        { coords: [33.3817, -97.0581], risk: 'yellow', popup: '<strong>Ray Roberts Lake SP: Isle du Bois</strong><br>Camping, trails, swim beach. Cottonmouths near water, copperheads in leaf litter, poison ivy on trails.' },
-        { coords: [33.4195, -97.0420], risk: 'yellow', popup: '<strong>Ray Roberts Lake SP: Johnson Branch</strong><br>Camping and trails in bluff areas. Similar hazards plus elevated snake activity on rocky slopes.' },
-        { coords: [33.3675, -97.0373], risk: 'red', popup: '<strong>Greenbelt Corridor: North Trailhead</strong><br>20-mile Elm Fork trail. Heavy wooded bottomland. Copperheads, cottonmouths at river, heavy poison ivy.' },
-        { coords: [33.0689, -97.0183], risk: 'red', popup: '<strong>LLELA Nature Preserve</strong><br>2,600 acres restored bottomland and prairie. 360+ vertebrate species. Copperheads in leaf litter, cottonmouths at water, heavy poison ivy, chiggers.' },
-        { coords: [33.2148, -97.1331], risk: 'green', popup: '<strong>Downtown Denton</strong><br>Urban core including Civic Center Park. Fire ants in planting beds, occasional wasps. Very low overall risk.' },
-        { coords: [33.2295, -97.1498], risk: 'green', popup: '<strong>North Lakes Park</strong><br>Urban park with pond loop, playground, tennis. Water snakes (usually harmless), fire ants, wasps under pavilions.' },
-        { coords: [33.1806, -97.1142], risk: 'green', popup: '<strong>South Lakes Park</strong><br>Fishing pond and Eureka Playground. Fire ants, wasps on equipment, occasional copperhead in brushy edges.' },
-        { coords: [33.2180, -97.1340], risk: 'green', popup: '<strong>Shiloh Field Community Garden</strong><br>14.5 acres. Fire ants, wasps attracted to compost, occasional snakes in mulch piles.' }
+        { coords: [33.3889, -97.0519], risk: 'yellow', popup: '<strong>Ray Roberts Lake SP: Isle du Bois</strong><br>Camping, trails, swim beach. Cottonmouths near water, copperheads in leaf litter, poison ivy on trails.' },
+        { coords: [33.4400, -97.0400], risk: 'yellow', popup: '<strong>Ray Roberts Lake SP: Johnson Branch</strong><br>Camping and trails in bluff areas. Similar hazards plus elevated snake activity on rocky slopes.' },
+        { coords: [33.3333, -97.0300], risk: 'red', popup: '<strong>Greenbelt Corridor: North Trailhead</strong><br>20-mile Elm Fork trail from Ray Roberts Dam to Lewisville Lake. Heavy wooded bottomland. Copperheads, cottonmouths at river, heavy poison ivy.' },
+        { coords: [33.0658, -96.9750], risk: 'red', popup: '<strong>LLELA Nature Preserve</strong><br>Lewisville Lake Environmental Learning Area. 2,600 acres restored bottomland and prairie. 360+ vertebrate species. Copperheads in leaf litter, cottonmouths at water, heavy poison ivy, chiggers.' },
+        { coords: [33.2514, -96.9447], risk: 'red', popup: '<strong>Clear Creek Natural Heritage Center</strong><br>Northeast Denton city-managed preserve at 3310 Collins Rd. Bottomland and wetlands. Cottonmouths along waterways, water snakes, heavy poison ivy, stinging nettle in shaded sections, water hemlock in wet ditches.' },
+        { coords: [33.2139, -97.1306], risk: 'green', popup: '<strong>Civic Center Park</strong><br>Central Denton at 321 E McKinney. Home to the Arts and Jazz Festival. Event lawn, trees, walking paths. Fire ants in planting beds, wasps on stage equipment. Low overall risk.' },
+        { coords: [33.2417, -97.1500], risk: 'green', popup: '<strong>North Lakes Park</strong><br>Northwest Denton at 2001 W Windsor Dr. Urban park with pond loop, playground, dog park, tennis. Water snakes around pond (usually harmless), fire ant mounds, wasps under pavilion eaves.' },
+        { coords: [33.1778, -97.1156], risk: 'green', popup: '<strong>South Lakes Park</strong><br>South Denton fishing pond and Eureka Playground. Fire ants in open grass, wasps on play equipment, occasional copperhead in brushy edges.' },
+        { coords: [33.2444, -97.1333], risk: 'green', popup: '<strong>Shiloh Field Community Garden</strong><br>14.5 acres on Shiloh Rd, the largest community garden in the nation. Raised beds, pollinator plantings, composting areas. Fire ants, wasps and yellow jackets attracted to sweet compost, occasional snakes in mulch piles.' }
     ];
-
+    var markerGroup = [];
     locations.forEach(function(loc) {
         var icon = loc.risk === 'red' ? redIcon : (loc.risk === 'yellow' ? yellowIcon : greenIcon);
-        L.marker(loc.coords, { icon: icon }).addTo(map).bindPopup(
+        var marker = L.marker(loc.coords, { icon: icon }).addTo(map).bindPopup(
             '<div style="font-family: Inter, Arial, sans-serif; max-width: 250px;">' + loc.popup + '</div>'
         );
+        markerGroup.push(marker);
+    });
+    // Fit map to show all markers with a bit of padding
+    if (markerGroup.length > 0) {
+        var group = L.featureGroup(markerGroup);
+        map.fitBounds(group.getBounds().pad(0.15));
+    }
+    // ========= QR MODAL =========
+    var qrBtn = document.getElementById('qrBtn');
+    var qrModal = document.getElementById('qrModal');
+    var closeQrBtn = document.getElementById('closeQrBtn');
+    function toggleModal() { qrModal.classList.toggle('active'); }
+    qrBtn.addEventListener('click', toggleModal);
+    closeQrBtn.addEventListener('click', toggleModal);
+    qrModal.addEventListener('click', function(e) { if (e.target === qrModal) toggleModal(); });
+    // Close on Escape for keyboard users
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && qrModal.classList.contains('active')) toggleModal();
     });
 })();
 </script>
-
 </body>
 </html>
